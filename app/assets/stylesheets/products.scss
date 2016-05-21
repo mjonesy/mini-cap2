@@ -1,0 +1,27 @@
+$border-color: solid blue;
+
+h1 {
+  border: $border-color 4px;
+  text-align: center;
+}
+
+.list {
+  h2 {
+    border: solid green 2px;
+    text-align: center;
+  }
+
+  p {
+    background-color: pink;
+  }
+}
+
+
+
+
+
+
+
+
+
+

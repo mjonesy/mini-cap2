@@ -63,6 +63,13 @@ class ProductsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def destroy
+    @product = Pet.find(params[:id])
+    @product.destroy
+
+    redirect_to "/"
+  end
+
 end
 
 

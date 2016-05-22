@@ -4,4 +4,6 @@
 <p>Stock: <%= @product.stock %></p>
 <p><%= @product.image %></p>
 
-<h5><a href="/products/<%= @product.id %>/edit">Edit the <%= @product.name %></a></h5>
+<!-- <h5><a href="/products/<%= @product.id %>/edit">Update the <%= @product.name %></a></h5> -->
+<h5><%= link_to "Update the #{@product.name}", "/products/#{@product.id}/edit" %></h5>
+<h5><%= link_to "Delete the #{@product.name}", "/products/#{@product.id}", method: :delete %></h5>

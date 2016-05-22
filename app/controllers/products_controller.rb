@@ -20,17 +20,6 @@ class ProductsController < ApplicationController
 
   # end
 
-  # def create
-  #   product = Pet.create(
-  #     name: params[:name],
-  #     price: params[:price],
-  #     description: params[:description],
-  #     stock: params[:stock],
-  #     image: params[:image],
-  #     )
-
-  #   redirect_to '/'
-  # end  
 
   def index
     @products = Pet.all
@@ -38,6 +27,40 @@ class ProductsController < ApplicationController
 
   def show
     @product = Pet.find(params[:id])
+  end
+
+  def new
+
+  end
+
+  def create
+    @product = Pet.create(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      stock: params[:stock],
+      image: params[:image],
+      )
+
+    render 'show.html.erb'
+  end
+
+  def edit
+    @product = Pet.find_by(id: params[:id])
+  end
+
+  def update
+    @product = Pet.find_by(id: params[:id])
+
+    @product.update(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      stock: params[:stock],
+      image: params[:image],
+      )
+
+    render 'show.html.erb'
   end
 
 end
